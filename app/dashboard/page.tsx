@@ -6,7 +6,6 @@ import panggih from '@/public/tato-ratel.jpg'
 import ratelsalib from '@/public/ratelsalib.jpg'
 import stiker from '@/public/stiker.png'
 
-
 export default function Page() {
     return (
 <div className="bg-white dark:bg-gray-200 rounded-xl">
@@ -38,9 +37,9 @@ export default function Page() {
                 
                 />
                 <div className="flex flex-col justify-between py-6 lg:mx-6">
-                    <p className="text-xl font-semibold text-gray-800">
+                    <a className="text-xl font-semibold text-gray-800">
                        next design?
-                    </p>
+                    </a>
 
                     <span className="text-sm text-gray-700 ">On: 3 Juli 2024</span>
                 </div>

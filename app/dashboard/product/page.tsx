@@ -1,12 +1,9 @@
-'use client'
-
 import Link from "next/link"
 import Image from "next/image"
 import kaos1 from "@/public/ratell.black.png"
 import kaos2 from "@/public/ratell.white.png"
 
 export default function Page() {
-    const URL= `${window.location.origin}/product`
     const telp = process.env.NEXT_PUBLIC_TELP
     const pesan =`halo saya ingi membeli kaos`
 
