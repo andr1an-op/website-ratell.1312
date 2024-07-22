@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image"
 import gang from '@/public/gang.jpg'
 import kaos from '@/public/baju.jpg'
