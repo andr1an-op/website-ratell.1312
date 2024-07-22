@@ -8,7 +8,7 @@ import ukuran from "@/public/ukuran.jpg"
 
 export default function Page() {
     const telp = process.env.NEXT_PUBLIC_TELP
-    const pesan =`halo saya ingi membeli kaos`
+    const pesan =`halo saya ingin membeli kaos`
     const link = `https://wa.me/${telp}?text=${pesan}.`
     return (
     <div className="inline-grid display-flex gap-2 ">
@@ -63,6 +63,15 @@ export default function Page() {
             </div>
         </div>
      </div>
+        <div>
+        <Image 
+         className="rounded-xl"
+             src={ukuran}
+             alt="ratell"
+             width={0}
+             height={0}
+         />
+        </div>
              <div className="px-8 justify-center">
                 <Link href={link} target="_blank">
                     <button  className="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-9 py-5 text-center dark:bg-gray-800 dark:hover:bg-gray-500">Klik disini untuk pesan</button>
