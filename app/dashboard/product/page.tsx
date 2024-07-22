@@ -5,8 +5,35 @@ import Image from "next/image"
 import kaos1 from "@/public/ratell.black.png"
 import kaos2 from "@/public/ratell.white.png"
 import ukuran from "@/public/ukuran.jpg"
+import { useEffect, useState } from "react"
+import { StaticImageData } from "next/image"
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function Page() {
+// Interface for image data
+interface ImageData {
+    src: StaticImageData;
+  }
+  
+  // Image data array
+  const images: ImageData[] = [
+    {
+      src: kaos1,
+    },
+    {
+      src: kaos2,
+    },
+    {
+      src: ukuran,
+    },
+  ];
+  
+  export default function ImageSlider(): JSX.Element {
+    // Suntuk useState
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
+  
+    // untuk hover
+    const [isHovered, setIsHovered] = useState<boolean>(false);
+    //untuk pesan ke whatsapp
     const telp = process.env.NEXT_PUBLIC_TELP
     const pesan =`halo saya ingin membeli kaos
     warna:
@@ -14,75 +41,88 @@ export default function Page() {
     jumlah:
     `
     const link = `https://wa.me/${telp}?text=${pesan}.`
+  
+    // Function untuk menampilkan tampilan sebelumnya
+    const prevSlide = (): void => {
+      setCurrentIndex(
+        (prevIndex) => (prevIndex - 1 + images.length) % images.length
+      );
+    };
+  
+    // Function to show the next slide
+    const nextSlide = (): void => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+  
+    // useEffect hook to handle automatic slide transition
+    useEffect(() => {
+      // Start interval for automatic slide change if not hovered
+      if (!isHovered) {
+        const interval = setInterval(() => {
+          nextSlide();
+        }, 3000);
+  
+        // Cleanup the interval on component unmount
+        return () => {
+          clearInterval(interval);
+        };
+      }
+    }, [isHovered]);
+  
+    // Handle mouse over event
+    const handleMouseOver = (): void => {
+      setIsHovered(true);
+    };
+  
+    // Handle mouse leave event
+    const handleMouseLeave = (): void => {
+      setIsHovered(false);
+    };
+  
     return (
-    <div className="inline-grid display-flex gap-2 ">
-    <div className=" px-3 w-90 bg-white border border-gray-800 rounded-lg shadow dark:bg-gray-200 dark:border-gray-700">
-        <a href="#">
-            <Image 
-            className="rounded-xl"
-                src={kaos1}
-                alt="ratell"
-                width={0}
-                height={0}
-            />
-        </a>
-       
-        <div className="px-3 pb-5">
-            <a href="#">
-                <h5 className="text-xl font-semibold tracking-tight text-gray-900 ">T-Shirt 1312 </h5>
-            </a>
-            <div className="flex items-center mt-2.5 mb-5">
-                <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                    Burn The Cops - Black 
-                </div>
-            </div>
-            <div className="flex items-center justify-between space-x-1"> Harga :
-                <span className=" text-base font-bold text-gray-900 ">150.000</span>
-                
-            </div>
-            
+      <div className="relative w-full mx-auto mt-4">
+        <div
+          className="relative h-[460px] mx-12 group hover:-translate-y-2"
+          onMouseOver={handleMouseOver}
+          onMouseLeave={handleMouseLeave}
+        >
+          <Image
+            src={images[currentIndex].src}
+            alt={`Slider Image ${currentIndex + 1}`}
+            layout="fill"
+            objectFit="contain"
+            className="rounded-xl transition-all duration-500 ease-in-out cursor-pointer"
+          />
         </div>
-    </div >
-     <div className=" px-3 w-90 bg-white border border-gray-800 rounded-lg shadow dark:bg-gray-200 dark:border-gray-700">
-     <a href="#">
-         <Image 
-         className="rounded-xl"
-             src={kaos2}
-             alt="ratell"
-             width={0}
-             height={0}
-         />
-     </a>
-     <div className="px-3 pb-5">
-            <a href="#">
-                <h5 className="text-xl font-semibold tracking-tight text-gray-900">T-Shirt 1312 </h5>
-            </a>
-        <div className="flex items-center mt-2.5 mb-5">
-                <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                    Burn The Cops - White
-                </div>
-         </div>
-            <div className="flex items-center justify-between"> Harga :
-                <span className=" font-bold text-gray-900 text-base ">150.000</span>
-            </div>
+        <button
+          className="absolute left-0 top-1/2 transform h-[459px] rounded-xl hover:bg-gray-200 mx-1 -mt-[10px] -translate-y-1/2 bg-white text-white p-2 group"
+          onClick={prevSlide}
+        >
+          <ChevronLeft className="text-black group-hover:text-gray-700" />
+        </button>
+        <button
+          className="absolute right-0 top-1/2 transform h-[459px] rounded-xl hover:bg-gray-200 mx-1 -mt-[10px] -translate-y-1/2 bg-white text-white p-2 group"
+          onClick={nextSlide}
+        >
+          <ChevronRight className="text-black group-hover:text-gray-700" />
+        </button>
+        <div className="flex justify-center mt-4">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`h-1 w-10 mx-1 ${
+                index === currentIndex
+                  ? "bg-[#beff46] rounded-xl"
+                  : "bg-gray-300 rounded-xl"
+              } transition-all duration-500 ease-in-out`}
+            ></div>
+          ))}
         </div>
-     </div>
-        <div>
-        <Image 
-         className="rounded-xl"
-             src={ukuran}
-             alt="ratell"
-             width={0}
-             height={0}
-         />
-        </div>
-             <div className="px-8 justify-center">
+        <div className="flex justify-center mt-4">
                 <Link href={link} target="_blank">
                     <button  className="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-9 py-5 text-center dark:bg-gray-800 dark:hover:bg-gray-500">Klik disini untuk pesan</button>
                 </Link>
-            </div>
+      </div>
      </div>
-     
-    
-    )
+    );
   }
