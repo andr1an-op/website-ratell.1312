@@ -59,8 +59,8 @@ interface ImageData {
       // Start interval for automatic slide change if not hovered
       if (!isHovered) {
         const interval = setInterval(() => {
-          nextSlide();
-        }, 15000);
+          ;
+        });
   
         // Cleanup the interval on component unmount
         return () => {
