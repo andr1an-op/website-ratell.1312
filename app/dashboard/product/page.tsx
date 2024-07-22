@@ -8,7 +8,7 @@ import ukuran from "@/public/ukuran.jpg"
 
 export default function Page() {
     const telp = process.env.NEXT_PUBLIC_TELP
-    const pesan =`halo saya ingin membeli kaos`
+    const pesan ='halo saya ingin membeli kaos \nWarna :\nSize : \nJumlah :\n \nUntuk pembayaran bisa melalui :\n BCA : 0462749447\nDana : 087887687517 \natas nama ANDRIANTO DWILAKSONO'
     const link = `https://wa.me/${telp}?text=${pesan}.`
     return (
     <div className="inline-grid display-flex gap-2 ">
