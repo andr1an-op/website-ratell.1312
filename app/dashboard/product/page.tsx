@@ -9,7 +9,7 @@ import { useEffect, useState } from "react"
 import { StaticImageData } from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Interface for image data
+// Interface untuk image data
 interface ImageData {
     src: StaticImageData;
   }
@@ -60,7 +60,7 @@ interface ImageData {
       if (!isHovered) {
         const interval = setInterval(() => {
           nextSlide();
-        }, 3000);
+        }, 15000);
   
         // Cleanup the interval on component unmount
         return () => {
@@ -91,7 +91,7 @@ interface ImageData {
             alt={`Slider Image ${currentIndex + 1}`}
             layout="fill"
             objectFit="contain"
-            className="rounded-xl transition-all duration-500 ease-in-out cursor-pointer"
+            className="rounded-xl transition-all ease-in-out"
           />
         </div>
         <button
@@ -117,6 +117,15 @@ interface ImageData {
               } transition-all duration-500 ease-in-out`}
             ></div>
           ))}
+        </div>
+        <div>
+            <div className="flex justify-center">
+            <a className="px-11 justify-center">
+                deskripsi:
+                kaos 24s, di atas XL +5ribu, lengan panjang +10ribu.Po 80ribu.
+                Harga: Rp 150.000
+            </a>
+            </div>
         </div>
         <div className="flex justify-center mt-4">
                 <Link href={link} target="_blank">
