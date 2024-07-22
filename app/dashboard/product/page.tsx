@@ -112,7 +112,7 @@ interface ImageData {
               key={index}
               className={`h-1 w-10 mx-1 ${
                 index === currentIndex
-                  ? "bg-[#beff46] rounded-xl"
+                  ? "bg-gray-800 rounded-xl"
                   : "bg-gray-300 rounded-xl"
               } transition-all duration-500 ease-in-out`}
             ></div>
@@ -120,7 +120,7 @@ interface ImageData {
         </div>
         <div className="flex justify-center mt-4">
                 <Link href={link} target="_blank">
-                    <button  className="text-black hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-9 py-5 text-center dark:bg-gray-300 dark:hover:bg-gray-800">Klik disini untuk pesan</button>
+                    <button  className="text-black hover:text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-9 py-5 text-center dark:bg-gray-300 dark:hover:bg-gray-800">Klik disini untuk pesan</button>
                 </Link>
       </div>
      </div>
