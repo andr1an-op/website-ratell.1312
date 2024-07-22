@@ -95,13 +95,13 @@ interface ImageData {
           />
         </div>
         <button
-          className="absolute left-0 top-1/2 transform h-[459px] rounded-xl hover:bg-gray-200 mx-1 -mt-[10px] -translate-y-1/2 bg-white text-white p-2 group"
+          className="absolute left-0 top-1/2 transform h-[459px] rounded-xl mx-1 -mt-[10px] -translate-y-1/2 bg-white text-white p-2 group"
           onClick={prevSlide}
         >
           <ChevronLeft className="text-black group-hover:text-gray-700" />
         </button>
         <button
-          className="absolute right-0 top-1/2 transform h-[459px] rounded-xl hover:bg-gray-200 mx-1 -mt-[10px] -translate-y-1/2 bg-white text-white p-2 group"
+          className="absolute right-0 top-1/2 transform h-[459px] rounded-xl mx-1 -mt-[10px] -translate-y-1/2 bg-white text-white p-2 group"
           onClick={nextSlide}
         >
           <ChevronRight className="text-black group-hover:text-gray-700" />
