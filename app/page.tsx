@@ -5,15 +5,9 @@ import Link from 'next/link';
 import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
 import logo from '@/public/logo.png'
-import Head from 'next/head';
 
 export default function Page() {
   return (
-    <>
-     <Head>
-      <title>Ratell.1312</title>
-      <link rel="icon" href='logo.png' />
-     </Head>
       <main className="flex min-h-screen flex-col p-6 ">
       <div className="mt-4 flex grow flex-col gap-3 md:flex-row">
         <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
@@ -43,6 +37,5 @@ export default function Page() {
         </div>
       </div>
     </main>
-    </>
   );
 }
