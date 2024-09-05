@@ -6,14 +6,14 @@ const callouts = [
     name: 'Black Variant',
     description: 'Burn The Cops',
     imageSrc: "https://ratell1312.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fratell.white.87ca3d3e.png&w=1920&q=75",
-    imageAlt: '',
+    imageAlt: 'Burn The Cops Shirt',
     href: '#',
   },
   {
     name: 'White Variant',
     description: 'Burn The Cops',
     imageSrc: 'https://ratell1312.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fratell.black.13f14c29.png&w=1920&q=75',
-    imageAlt: '',
+    imageAlt: 'Burn The Cops Shirt',
     href: '#',
   },
 ]
