@@ -1,23 +1,6 @@
-'use client'
-import ratell1 from "@/public/ratell.white.png"
-import ratell2 from "@/public/ratell.black.png"
+'use client';
 
 
-// Interface untuk image data
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
 const callouts = [
   {
     name: 'Black Variant',
