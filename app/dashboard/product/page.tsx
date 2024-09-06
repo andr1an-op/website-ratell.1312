@@ -3,14 +3,14 @@
 
 const callouts = [
   {
-    name: 'Black Variant',
+    name: 'White Variant',
     description: 'Burn The Cops',
     imageSrc: '/images/ratell.white.png',
     imageAlt: 'Burn The Cops Shirt',
     href: 'https://www.instagram.com/p/C9mBP3ePr-S/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
   {
-    name: 'White Variant',
+    name: 'Black Variant',
     description: 'Burn The Cops',
     imageSrc: '/images/ratell.black.png',
     imageAlt: 'Burn The Cops Shirt',
