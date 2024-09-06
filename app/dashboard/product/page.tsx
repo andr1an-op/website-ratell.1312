@@ -5,16 +5,30 @@ const callouts = [
   {
     name: 'Black Variant',
     description: 'Burn The Cops',
-    imageSrc: "https://ratell1312.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fratell.white.87ca3d3e.png&w=1920&q=75",
+    imageSrc: '/images/ratell.white.png',
     imageAlt: 'Burn The Cops Shirt',
-    href: '#',
+    href: 'https://www.instagram.com/p/C9mBP3ePr-S/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
   {
     name: 'White Variant',
     description: 'Burn The Cops',
-    imageSrc: 'https://ratell1312.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fratell.black.13f14c29.png&w=1920&q=75',
+    imageSrc: '/images/ratell.black.png',
     imageAlt: 'Burn The Cops Shirt',
-    href: '#',
+    href: 'https://www.instagram.com/p/C9mBP3ePr-S/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+  },
+  {
+    name: 'Black Variant',
+    description: 'Hate Pol PP',
+    imageSrc: '/images/hatepolpp-black.png',
+    imageAlt: 'Hate Pol PP Shirt',
+    href: 'https://www.instagram.com/p/C1C-VlkyXfn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+  },
+  {
+    name: 'White Variant',
+    description: 'Hate Pol PP',
+    imageSrc: '/images/hatepolpp-white.png',
+    imageAlt: 'Hate Pol PP Shirt',
+    href: 'https://www.instagram.com/p/C1C-VlkyXfn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
   },
 ]
 
